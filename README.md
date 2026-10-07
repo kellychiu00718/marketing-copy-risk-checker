@@ -5,7 +5,7 @@
 ## Problem
 A marketing post can go out on a memorial day, or contain a claim or phrase that needs a second look. Teams usually catch this from memory and by asking around, and a person reviewing alone can miss things because of their own bias. A recent example is the Starbucks Korea "Tank Day" promotion controversy, the kind of public-relations incident a pre-publish check is meant to help catch.
 
-I built this to apply the rule-based + LLM cascade method from my thesis to a practical tool. The tool helps marketers check copy before they publish it. AI assists the judgment, and a person makes the final decision or edit. The aim is to lower the chance of a PR incident. This prototype has not been tested on real campaigns, so it does not show that yet. It also keeps a record of who decided what.
+I built this to apply the rule-based + LLM cascade method from my thesis to a practical tool. The tool helps marketers check copy before they publish it. AI assists the judgment, and a person makes the final decision or edit. The aim is to lower the chance of a PR incident. This prototype has not been tested on real campaigns, so it does not show that yet. It also keeps a record of each decision and the reason for it.
 
 ## My role
 I designed and built it alone: the rules, the LLM prompt, the review screen, the audit log, the test set and the evaluation. I used Claude Code to help write and review code. The design decisions and the labeling of every test case are mine.
@@ -73,6 +73,16 @@ I split the 48 cases into **24** for development and **24** for a blind test. I 
 
 ## Business impact
 This prototype has no users, so there is no measured impact. To measure it, I would track how many flagged items reviewers confirm as real (precision on real copy), how many false alarms they report, and how much review time the check saves.
+
+## If it is deployed for a team
+The tool runs only on my computer today. If it were deployed for a marketing team, this is what a shared version would give them. Each point is already in the code, except where noted.
+- **One shared record of each decision.** Every check keeps the copy, the date, the decision and the note. A teammate can open a card and read the reasoning instead of asking around.
+- **The same checks for everyone.** The rules and the AI prompt are written once. Two reviewers get the same flags for the same copy, and the check does not depend on one person remembering every memorial day.
+- **A shared board.** The team can see which copy is waiting, needs a revision or is on hold.
+- **Hand-off to the tools the team already uses.** Export to CSV or Excel for Google Sheets, or to Markdown for Notion.
+- **Predictable cost.** A daily AI limit per workspace and for the whole service keeps API spending bounded.
+
+What is not there yet: sign-in. In public mode a workspace is only a hard-to-guess code in the URL, so anyone with the link can read the records, and the log cannot say which person decided. A real team deployment needs sign-in, the API key kept on the server, and a trial with real copy. These benefits are what the design aims for. I have not measured them with real users.
 
 ## Limitations
 - I wrote both the labels and the rules, so the results lean optimistic.
