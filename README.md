@@ -1,4 +1,4 @@
-# Marketing Copy Risk Checker: Catch PR Risks Before You Publish
+# Marketing Copywriting Risk Checker: Catch PR Risks Before You Publish
 
 > A prototype that checks marketing copy before it goes live, using rules plus an LLM, with a person making the final call. Side project. Status: runs locally, not deployed, no real users. The interface is in Korean.
 
