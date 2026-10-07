@@ -51,6 +51,12 @@ The interface is in Korean. The sample copy below is invented (it comes from my 
 
 ![Log and export tab](docs/screenshots/06-log-export.png)
 
+**It also works on a phone.** The page is responsive. On a narrow screen the columns stack, the three decision buttons become full-width, the board folds from four columns into a 2×2 grid, and the log table scrolls sideways. These screenshots were taken at 390 px wide (phone size) in a desktop browser. I have not tested touch dragging on a real phone yet.
+
+| Input | Result | Board | Log |
+|---|---|---|---|
+| <img src="docs/screenshots/07-mobile-input.png" width="200"> | <img src="docs/screenshots/08-mobile-result.png" width="200"> | <img src="docs/screenshots/09-mobile-board.png" width="200"> | <img src="docs/screenshots/10-mobile-log.png" width="200"> |
+
 ## Evaluation (synthetic cases, small sample)
 I split the 48 cases into **24** for development and **24** for a blind test. I locked the test file with a SHA-256 hash before running it and ran each mode twice. Details are in [`docs/evaluation.md`](docs/evaluation.md).
 
@@ -85,6 +91,7 @@ This prototype has no users, so there is no measured impact. To measure it, I wo
 ## Challenges & learnings
 - The LLM once called an election-linked promotion harmless. That led me to add a rule. I removed the case from the evaluation so it would not inflate the score.
 - Keeping a locked test set and reporting the result even when it is not flattering taught me the most. It made me careful about what the numbers can and cannot say.
+- Making it responsive was less work than I expected, but not zero. Streamlit already stacks columns on a narrow screen. The drag-and-drop board did not: four narrow columns squeezed the card text into one or two words per line. I added media queries so the board folds into a 2×2 grid, shrank the title, tightened the margins, and fixed a hint that said "on the left", which is wrong once the layout is stacked. I could only test at phone width in a desktop browser, so touch dragging is still untested.
 - While taking the screenshots I found three small bugs and fixed them: a decision note carried over to the next card, the board showed old columns after a tab switch, and the daily-use counter lagged one check behind.
 
 ## How to run

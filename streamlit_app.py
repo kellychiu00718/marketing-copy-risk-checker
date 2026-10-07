@@ -29,6 +29,14 @@ st.markdown(
     """<style>
 [data-testid="stCaptionContainer"] { color: #555866 !important; }
 @media (prefers-color-scheme: dark) { [data-testid="stCaptionContainer"] { color: #b9bcc8 !important; } }
+/* 반응형: 좁은 화면(휴대폰)에서는 제목을 줄이고 여백을 좁히며, 표는 가로로 밀어서 볼 수 있게 한다. */
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"] { padding: 2.5rem 1rem 3rem !important; }
+  h1 { font-size: 1.65rem !important; line-height: 1.25 !important; }
+  [data-testid="stTabs"] button { padding-left: 0.4rem !important; padding-right: 0.4rem !important; }
+  [data-testid="stTabs"] button p { font-size: 0.9rem !important; }
+  [data-testid="stDataFrame"] { overflow-x: auto; }
+}
 </style>""",
     unsafe_allow_html=True,
 )
@@ -40,6 +48,11 @@ BOARD_CSS = """
                  font-size: 0.82rem; line-height: 1.35; margin: 0 0 6px 0; padding: 7px 9px; white-space: normal; }
 .sortable-container:not(:has(.sortable-item))::after { content: "여기로 끌어 놓기"; display: block; color: #5d6070;
                  font-size: 0.8rem; padding: 14px 6px; text-align: center; }
+/* 좁은 화면: 4열을 2×2로 접어 카드 글자가 세로로 쪼개지지 않게 한다. */
+@media (max-width: 560px) {
+  .sortable-component { flex-wrap: wrap; }
+  .sortable-container { flex: 1 1 calc(50% - 10px); min-width: calc(50% - 10px); }
+}
 @media (prefers-color-scheme: dark) {
   .sortable-container { background: #262833; }
   .sortable-container-header { color: #f0f1f5; }
@@ -163,7 +176,7 @@ with tab_check:
         rid = st.session_state.get("rid")
         cur_row = store.get(OWNER, rid) if rid else None
         if not res or not cur_row:
-            st.info("왼쪽에 문구를 입력하고 '검수하기'를 눌러 보세요.")
+            st.info("문구를 입력하고 '검수하기'를 눌러 보세요.")
         else:
             if st.session_state.get("limit_note"):
                 st.warning(st.session_state["limit_note"])
