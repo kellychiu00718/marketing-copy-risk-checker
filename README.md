@@ -18,11 +18,11 @@ I designed and built it alone: the rules, the LLM prompt, the review screen, the
 Python, Streamlit, SQLite, Claude API (structured output), pytest (**27** unit tests).
 
 ## Process
-- **Rules layer:** memorial-day calendar, word list and superlative claims. Fast and easy to explain.
-- **LLM layer:** finds meaning-level risks the rules miss (stereotypes, discrimination, health claims). It only flags situations that need a person to look; it does not judge politics.
-- **Cascade:** if the rules are highly confident, the LLM is skipped. If the LLM fails, the result falls back to the rules and is marked "needs human check".
-- **Human review:** proceed, revise or hold, with a note. Nothing is ever auto-approved. Every decision goes to an audit log and can be exported to CSV, Excel or Markdown. A drag-and-drop board tracks status.
-- **Safety checks after review:** random delimiters against prompt injection, a 30-second API timeout, spreadsheet-formula protection on exports, a daily AI usage cap, and per-user workspaces.
+- Rules layer: memorial-day calendar, word list and superlative claims. Fast and easy to explain.
+- LLM layer: finds meaning-level risks the rules miss (stereotypes, discrimination, health claims). It only flags situations that need a person to look; it does not judge politics.
+- Cascade: if the rules are highly confident, the LLM is skipped. If the LLM fails, the result falls back to the rules and is marked "needs human check".
+- Human review: proceed, revise or hold, with a note. Nothing is ever auto-approved. Every decision goes to an audit log and can be exported to CSV, Excel or Markdown. A drag-and-drop board tracks status.
+- Safety checks added after review: random delimiters against prompt injection, a 30-second API timeout, spreadsheet-formula protection on exports, a daily AI usage cap, and per-user workspaces.
 
 ## Evaluation (synthetic cases, small sample)
 I split the 48 cases into **24** for development and **24** for a blind test. I locked the test file with a SHA-256 hash before running it and ran each mode twice. Details are in [`docs/evaluation.md`](docs/evaluation.md).
@@ -48,15 +48,15 @@ This prototype has no users, so there is no measured impact. To measure it, I wo
 - The calendar is not yet checked against official sources.
 
 ## Future work
-1. **Independent labeling.** Ask at least two reviewers to label the cases without seeing my labels, then report Cohen's kappa. Policy-dependent cases (for example a post that mentions a national holiday) may get different labels depending on team policy.
-2. **A fresh blind set.** The current test set is used up. Write 24 or more new cases, lock them with a hash, and run them once.
-3. **Real copy and real feedback.** Re-measure precision on a sample of real marketing copy and on false-positive reports from users.
-4. **Verify the calendar.** Check every date against an official source and mark it verified. Add temporary closure days.
-5. **Version B: a demand-signal dashboard.** Combine Naver DataLab search trends, weather and holidays to see how events relate to demand. Search volume is only a proxy for demand, not revenue.
-6. **Before any public release.** Keep the API key on the server only, add rate limits and a clear "unofficial, assistive tool" label, store no personal data beyond the input, and test the drag-and-drop board on touch devices.
+1. Independent labeling. Ask at least two reviewers to label the cases without seeing my labels, then report Cohen's kappa. Policy-dependent cases (for example a post that mentions a national holiday) may get different labels depending on team policy.
+2. A fresh blind set. The current test set is used up. Write 24 or more new cases, lock them with a hash, and run them once.
+3. Real copy and real feedback. Re-measure precision on a sample of real marketing copy and on false-positive reports from users.
+4. Verify the calendar. Check every date against an official source and mark it verified. Add temporary closure days.
+5. Version B, a demand-signal dashboard. Combine Naver DataLab search trends, weather and holidays to see how events relate to demand. Search volume is only a proxy for demand, not revenue.
+6. Before any public release. Keep the API key on the server only, add rate limits and a clear "unofficial, assistive tool" label, store no personal data beyond the input, and test the drag-and-drop board on touch devices.
 
 ## Challenges & learnings
-- A case where the LLM called an election-linked promotion harmless led me to add a rule, and I removed that case from the evaluation so it would not inflate the score.
+- The LLM once called an election-linked promotion harmless. That led me to add a rule. I removed the case from the evaluation so it would not inflate the score.
 - Keeping a locked test set and reporting the result even when it is not flattering taught me the most. It made me careful about what the numbers can and cannot say.
 
 ## How to run

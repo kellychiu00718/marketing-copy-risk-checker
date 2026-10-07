@@ -7,8 +7,8 @@ Compare three ways of deciding "a person should check this copy": the rules laye
 
 ## Data
 - 48 synthetic sentences. They are not real ads or real events.
-- **Development set, 24 cases** (`tests/cases_dev.yaml`): used while fixing rules and prompts.
-- **Blind test set, 24 cases** (`tests/cases_test.yaml`): written and locked before the rules were changed, evaluated once at the end.
+- Development set, 24 cases (`tests/cases_dev.yaml`): used while fixing rules and prompts.
+- Blind test set, 24 cases (`tests/cases_test.yaml`): written and locked before the rules were changed, evaluated once at the end.
   - SHA-256 at lock time: `46fd0902cc60df3958ff87d85f42cb9790087f9947bf3a2621ce5302481b1607`. If the file hashes to something else, it was edited after the lock (`shasum -a 256 tests/cases_test.yaml`).
 
 ## Rules of the evaluation
@@ -18,7 +18,7 @@ Compare three ways of deciding "a person should check this copy": the rules laye
 4. Confidence intervals are Wilson 95%. McNemar uses the exact test.
 
 ## Known limits (read the results with these)
-- **One person wrote the labels and the rules.** The rules inevitably resemble my labeling taste, so the results lean optimistic. The best fix is two independent reviewers.
+- One person wrote the labels and the rules. The rules inevitably resemble my labeling taste, so the results lean optimistic. The best fix is two independent reviewers.
 - The test set contains some false-positive patterns I already knew about (idioms), so it is not fully blind.
 - 24 cases is small. The intervals are wide, so the results show direction, not a winner.
 - Cases marked `policy: true` (mentioning a national holiday, text containing instructions) may be labeled differently under another team's policy.
