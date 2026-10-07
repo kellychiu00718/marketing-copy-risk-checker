@@ -39,7 +39,7 @@ The interface is in Korean. The sample copy below is invented (it comes from my 
 
 ![Decision recorded](docs/screenshots/03-decision.png)
 
-**When the rules cannot judge, the AI reads the copy.** This example is flagged as a gender stereotype. The AI quotes the phrase, explains the reason, suggests a rewrite and shows its own confidence (72%). That number is the model's self-rating, not a true probability.
+**When the rules cannot judge, the AI reads the copy.** This example is flagged as a gender stereotype. The AI quotes the phrase, explains the reason, suggests a rewrite and shows its own confidence (70%). That number is the model's self-rating, not a true probability.
 
 ![Result from the AI layer](docs/screenshots/04-ai-result.png)
 

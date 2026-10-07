@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import secrets
@@ -152,7 +153,8 @@ with tab_check:
                 captions=[v[1] for v in MODES.values()], label_visibility="collapsed",
             )
         if st.button("검수하기", type="primary", disabled=not text.strip(), width="stretch"):
-            run_review(text, launch, mode)
+            if run_review(text, launch, mode):
+                st.rerun()  # 사이드바의 '오늘 AI 검수 사용' 횟수가 이번 검수까지 반영되도록 다시 그린다.
         if not text.strip():
             st.caption("문구를 먼저 입력하면 '검수하기' 버튼이 켜져요.")
 
@@ -173,8 +175,9 @@ with tab_check:
                 "- ✏️ **수정 필요** — 고쳐야 할 카드로 표시해요 (보드의 '수정 필요' 열)\n"
                 "- ⏸ **보류** — 결정을 잠시 미뤄요"
             )
-            with st.form("decision_form", border=False):
-                note = st.text_area("결정 메모 (선택)", height=80, max_chars=300,
+            # 카드마다 폼과 메모 입력칸의 key를 따로 둔다. key가 같으면 앞 카드의 메모가 그대로 남는다.
+            with st.form(f"decision_form_{rid}", border=False):
+                note = st.text_area("결정 메모 (선택)", height=80, max_chars=300, key=f"note_{rid}",
                                     placeholder="예: 날짜를 하루 미루기로 함 / 법무팀 확인 후 게시 예정")
                 c1, c2, c3 = st.columns(3)
                 pick = None
@@ -208,7 +211,9 @@ with tab_board:
             return f"#{r['id']} {LEVEL_ICON[r['result'].get('level', 'clear')]} {t[:22]}{'…' if len(t) > 22 else ''}"
 
         board = [{"header": h, "items": [card(r) for r in rows if r["decision"] == k]} for k, h in cols]
-        moved = sort_items(board, multi_containers=True, direction="horizontal", key="board", custom_style=BOARD_CSS)
+        # 카드 구성이 바뀌면 key도 바꿔서 보드를 새로 그린다. key가 고정이면 탭을 오가거나 결정을 기록한 뒤에도 옛 배치가 남는다.
+        board_sig = hashlib.md5(json.dumps(board, ensure_ascii=False).encode()).hexdigest()[:8]
+        moved = sort_items(board, multi_containers=True, direction="horizontal", key=f"board_{board_sig}", custom_style=BOARD_CSS)
         changed = False
         for (k, _), cont in zip(cols, moved):
             for it in cont["items"]:
