@@ -24,6 +24,33 @@ Python, Streamlit, SQLite, Claude API (structured output), pytest (**27** unit t
 - Human review: proceed, revise or hold, with a note. Nothing is ever auto-approved. Every decision goes to an audit log and can be exported to CSV, Excel or Markdown. A drag-and-drop board tracks status.
 - Safety checks added after review: random delimiters against prompt injection, a 30-second API timeout, spreadsheet-formula protection on exports, a daily AI usage cap, and per-user workspaces.
 
+## Screenshots and how to use it
+The interface is in Korean. The sample copy below is invented (it comes from my synthetic test cases), not real advertising.
+
+**Step 1. Enter the copy and the planned start date.** The default mode is "Recommended" (rules first, AI only where the rules cannot judge). A faster rules-only mode and a slower AI-reads-everything mode are in the expander.
+
+![Input screen](docs/screenshots/01-input.png)
+
+**Step 2. Read the result.** Here the rules found that the start date, May 18, is a memorial day, so the banner is red ("Check before publishing"). The card below the banner shows the quoted evidence, the reason and a suggested next step.
+
+![Result from the rules layer](docs/screenshots/02-result.png)
+
+**Step 3. Record a decision.** Choose "OK to publish", "Needs revision" or "On hold", with an optional note. Nothing is ever approved automatically.
+
+![Decision recorded](docs/screenshots/03-decision.png)
+
+**When the rules cannot judge, the AI reads the copy.** This example is flagged as a gender stereotype. The AI quotes the phrase, explains the reason, suggests a rewrite and shows its own confidence (72%). That number is the model's self-rating, not a true probability.
+
+![Result from the AI layer](docs/screenshots/04-ai-result.png)
+
+**Step 4. Use the board.** Every check is a card in a column by decision. Drag a card to another column to change its status. You can also edit the text and check it again as a new card.
+
+![Board tab](docs/screenshots/05-board.png)
+
+**Step 5. Review and export.** The log tab lists every check with filters. Export to CSV, Excel or Markdown (to paste into Notion).
+
+![Log and export tab](docs/screenshots/06-log-export.png)
+
 ## Evaluation (synthetic cases, small sample)
 I split the 48 cases into **24** for development and **24** for a blind test. I locked the test file with a SHA-256 hash before running it and ran each mode twice. Details are in [`docs/evaluation.md`](docs/evaluation.md).
 
