@@ -85,6 +85,7 @@ This prototype has no users, so there is no measured impact. To measure it, I wo
 ## Challenges & learnings
 - The LLM once called an election-linked promotion harmless. That led me to add a rule. I removed the case from the evaluation so it would not inflate the score.
 - Keeping a locked test set and reporting the result even when it is not flattering taught me the most. It made me careful about what the numbers can and cannot say.
+- While taking the screenshots I found three small bugs and fixed them: a decision note carried over to the next card, the board showed old columns after a tab switch, and the daily-use counter lagged one check behind.
 
 ## How to run
 The Python package is named `preflight` (the project's earlier name), so you will see that name in the code.
