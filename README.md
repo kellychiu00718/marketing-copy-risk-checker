@@ -38,6 +38,9 @@ I split the 48 cases into **24** for development and **24** for a blind test. I 
 - The LLM alone gave a different verdict on **3 of 24** inputs when run twice. Rules and cascade never did.
 - **This does not prove the cascade is better.** No pair of modes differs significantly (McNemar exact test, p = 0.125 to 1.0), and the confidence intervals are wide.
 
+## Business impact
+This prototype has no users, so there is no measured impact. To measure it, I would track how many flagged items reviewers confirm as real (precision on real copy), how many false alarms they report, and how much review time the check saves.
+
 ## Limitations
 - I wrote both the labels and the rules, so the results lean optimistic.
 - 24 test cases are too few to claim one mode beats another; they only show direction.
