@@ -12,7 +12,7 @@ from preflight.export import LEVEL_LABEL, to_csv, to_frame, to_markdown, to_xlsx
 from preflight.pipeline import review
 from preflight.store import DECISION_LABEL
 
-st.set_page_config(page_title="Campaign Preflight", page_icon="✅", layout="wide")
+st.set_page_config(page_title="Marketing Copy Risk Checker", page_icon="✅", layout="wide")
 
 LEVEL_ICON = {"clear": "🟢", "low": "🟡", "medium": "🟠", "high": "🔴"}
 DECISION_ICON = {None: "🕓", "revise": "✏️", "approve": "✅", "hold": "⏸"}
@@ -80,7 +80,7 @@ with st.sidebar:
         st.caption("이 페이지 주소(URL)를 북마크하면 내 기록을 다시 볼 수 있어요. 주소를 아는 사람은 누구나 같은 기록을 볼 수 있으니, 팀원에게만 공유하고 민감한 정보는 넣지 마세요.")
     dev = st.toggle("개발자 모드", help="검수 결과의 원본 데이터(JSON)와 사용량을 보여줍니다. 일반 사용에는 필요 없어요.")
 
-st.title("Campaign Preflight")
+st.title("Marketing Copy Risk Checker")
 st.caption("캠페인 문구 사전 검수 보조 도구 (프로토타입) · 최종 판단은 항상 사람이 합니다 · 개인 포트폴리오 프로젝트이며 특정 기업의 공식 도구가 아닙니다")
 
 

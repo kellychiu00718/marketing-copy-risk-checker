@@ -1,4 +1,4 @@
-# Campaign Preflight: Pre-Publish Check for Marketing Copy
+# Marketing Copy Risk Checker: Catch PR Risks Before You Publish
 
 > A prototype that checks marketing copy before it goes live, using rules plus an LLM, with a person making the final call. Side project. Status: runs locally, not deployed, no real users. The interface is in Korean.
 
@@ -57,6 +57,8 @@ I split the 48 cases into **24** for development and **24** for a blind test. I 
 - Keeping a locked test set and reporting the result even when it is not flattering taught me the most. It made me careful about what the numbers can and cannot say.
 
 ## How to run
+The Python package is named `preflight` (the project's earlier name), so you will see that name in the code.
+
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
