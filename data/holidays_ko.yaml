@@ -1,0 +1,209 @@
+meta:
+  source: 나무위키 '공휴일/대한민국' (2026-10-06 KST 열람) + 공휴일에 관한 법률 제2·3조 인용분
+  verified: false
+  note: 임시공휴일은 정부 지정 시 추가됨(이 목록에 없음). 공개 배포 전 한국천문연구원 월력요항으로 대조.
+  generator: scripts/build_holidays.py
+local_holidays:
+- month: 4
+  day: 3
+  name: 제주 4·3 희생자 추념일
+  region: 제주특별자치도
+  since: 2018
+- month: 5
+  day: 18
+  name: 5·18민주화운동 기념일
+  region: 광주광역시
+  since: 2020
+holidays:
+- date: '2026-01-01'
+  name: 신정
+  type: holiday
+- date: '2026-02-16'
+  name: 설날 연휴
+  type: holiday
+- date: '2026-02-17'
+  name: 설날 연휴
+  type: holiday
+- date: '2026-02-18'
+  name: 설날 연휴
+  type: holiday
+- date: '2026-03-01'
+  name: 삼일절
+  type: holiday
+- date: '2026-03-02'
+  name: 대체공휴일(삼일절)
+  type: substitute
+- date: '2026-05-01'
+  name: 노동절
+  type: holiday
+- date: '2026-05-05'
+  name: 어린이날
+  type: holiday
+- date: '2026-05-24'
+  name: 부처님오신날
+  type: holiday
+- date: '2026-05-25'
+  name: 대체공휴일(부처님오신날)
+  type: substitute
+- date: '2026-06-03'
+  name: 지방선거일
+  type: election
+- date: '2026-06-06'
+  name: 현충일
+  type: holiday
+- date: '2026-07-17'
+  name: 제헌절
+  type: holiday
+- date: '2026-08-15'
+  name: 광복절
+  type: holiday
+- date: '2026-08-17'
+  name: 대체공휴일(광복절)
+  type: substitute
+- date: '2026-09-24'
+  name: 추석 연휴
+  type: holiday
+- date: '2026-09-25'
+  name: 추석 연휴
+  type: holiday
+- date: '2026-09-26'
+  name: 추석 연휴
+  type: holiday
+- date: '2026-10-03'
+  name: 개천절
+  type: holiday
+- date: '2026-10-05'
+  name: 대체공휴일(개천절)
+  type: substitute
+- date: '2026-10-09'
+  name: 한글날
+  type: holiday
+- date: '2026-12-25'
+  name: 성탄절
+  type: holiday
+- date: '2027-01-01'
+  name: 신정
+  type: holiday
+- date: '2027-02-06'
+  name: 설날 연휴
+  type: holiday
+- date: '2027-02-07'
+  name: 설날 연휴
+  type: holiday
+- date: '2027-02-08'
+  name: 설날 연휴
+  type: holiday
+- date: '2027-02-09'
+  name: 대체공휴일(설날 연휴)
+  type: substitute
+- date: '2027-03-01'
+  name: 삼일절
+  type: holiday
+- date: '2027-05-01'
+  name: 노동절
+  type: holiday
+- date: '2027-05-03'
+  name: 대체공휴일(노동절)
+  type: substitute
+- date: '2027-05-05'
+  name: 어린이날
+  type: holiday
+- date: '2027-05-13'
+  name: 부처님오신날
+  type: holiday
+- date: '2027-06-06'
+  name: 현충일
+  type: holiday
+- date: '2027-07-17'
+  name: 제헌절
+  type: holiday
+- date: '2027-07-19'
+  name: 대체공휴일(제헌절)
+  type: substitute
+- date: '2027-08-15'
+  name: 광복절
+  type: holiday
+- date: '2027-08-16'
+  name: 대체공휴일(광복절)
+  type: substitute
+- date: '2027-09-14'
+  name: 추석 연휴
+  type: holiday
+- date: '2027-09-15'
+  name: 추석 연휴
+  type: holiday
+- date: '2027-09-16'
+  name: 추석 연휴
+  type: holiday
+- date: '2027-10-03'
+  name: 개천절
+  type: holiday
+- date: '2027-10-04'
+  name: 대체공휴일(개천절)
+  type: substitute
+- date: '2027-10-09'
+  name: 한글날
+  type: holiday
+- date: '2027-10-11'
+  name: 대체공휴일(한글날)
+  type: substitute
+- date: '2027-12-25'
+  name: 성탄절
+  type: holiday
+- date: '2027-12-27'
+  name: 대체공휴일(성탄절)
+  type: substitute
+- date: '2028-01-01'
+  name: 신정
+  type: holiday
+- date: '2028-01-26'
+  name: 설날 연휴
+  type: holiday
+- date: '2028-01-27'
+  name: 설날 연휴
+  type: holiday
+- date: '2028-01-28'
+  name: 설날 연휴
+  type: holiday
+- date: '2028-03-01'
+  name: 삼일절
+  type: holiday
+- date: '2028-05-01'
+  name: 노동절
+  type: holiday
+- date: '2028-05-02'
+  name: 부처님오신날
+  type: holiday
+- date: '2028-05-05'
+  name: 어린이날
+  type: holiday
+- date: '2028-06-06'
+  name: 현충일
+  type: holiday
+- date: '2028-07-17'
+  name: 제헌절
+  type: holiday
+- date: '2028-08-15'
+  name: 광복절
+  type: holiday
+- date: '2028-10-02'
+  name: 추석 연휴
+  type: holiday
+- date: '2028-10-03'
+  name: 개천절 / 추석 연휴
+  type: holiday
+- date: '2028-10-04'
+  name: 추석 연휴
+  type: holiday
+- date: '2028-10-05'
+  name: 대체공휴일(개천절)
+  type: substitute
+- date: '2028-10-06'
+  name: 대체공휴일(추석 연휴)
+  type: substitute
+- date: '2028-10-09'
+  name: 한글날
+  type: holiday
+- date: '2028-12-25'
+  name: 성탄절
+  type: holiday

@@ -1,0 +1,84 @@
+# 한국 추모·기념일 캘린더 (프로토타입)
+# kind: memorial = 희생·추모 성격 (날짜·키워드 모두 high)
+#       national = 국가 기념일·공휴일 (medium)
+# verified: false → 공개 출처 URL로 날짜 재확인 전. 공개 배포 전에 모두 true로 바꿔야 함.
+- id: samil
+  name: 3·1절
+  month: 3
+  day: 1
+  kind: national
+  keywords: ["3·1운동", "삼일절", "3.1절"]
+  authority: 국가보훈부 / 법정 공휴일
+  verified: false
+- id: jeju43
+  name: 제주 4·3 희생자 추념일
+  month: 4
+  day: 3
+  kind: memorial
+  keywords: ["제주 4·3", "제주4·3", "4·3 사건"]
+  authority: 법정 기념일
+  verified: false
+- id: sewol
+  name: 세월호 참사 추모일
+  month: 4
+  day: 16
+  kind: memorial
+  keywords: ["세월호"]
+  authority: 참사 추모일
+  verified: false
+- id: apr19
+  name: 4·19 혁명 기념일
+  month: 4
+  day: 19
+  kind: national
+  keywords: ["4·19 혁명", "4.19 혁명"]
+  authority: 법정 기념일
+  verified: false
+- id: may18
+  name: 5·18 민주화운동 기념일
+  month: 5
+  day: 18
+  kind: memorial
+  keywords: ["5·18", "5.18민주", "광주민주화"]
+  authority: 법정 기념일
+  verified: false
+- id: hyeonchung
+  name: 현충일
+  month: 6
+  day: 6
+  kind: memorial
+  keywords: ["현충일"]
+  authority: 법정 공휴일
+  verified: false
+- id: jun25
+  name: 6·25 전쟁 기념일
+  month: 6
+  day: 25
+  kind: memorial
+  keywords: ["6·25", "한국전쟁"]
+  authority: 정부 기념일
+  verified: false
+- id: gwangbok
+  name: 광복절
+  month: 8
+  day: 15
+  kind: national
+  keywords: ["광복절"]
+  authority: 법정 공휴일
+  verified: false
+- id: itaewon
+  name: 이태원 참사 추모일
+  month: 10
+  day: 29
+  kind: memorial
+  keywords: ["이태원 참사"]
+  authority: 참사 추모일
+  verified: false
+- id: muan
+  name: 무안 항공기 참사 추모일
+  month: 12
+  day: 29
+  kind: memorial
+  keywords: ["무안공항 참사", "제주항공 참사"]
+  authority: 참사 추모일
+  verified: false
